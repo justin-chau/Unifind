@@ -1,0 +1,515 @@
+<mat-toolbar>
+  <span>Unifind</span>
+  <span class="spacer"></span>
+  <mat-form-field appearance="outline" color="accent">
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="College Name">
+  </mat-form-field>
+  <button mat-flat-button color="accent">
+    Account
+  </button>
+</mat-toolbar>
+
+<div class="card-container">
+  <mat-card>
+    <h1 class="mat-h2">Georgia Tech</h1>
+    <h1 class="mat-h4">Atlanta, GA</h1>
+    <div class="responsive-table">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="regular">
+          <th mat-header-cell *matHeaderCellDef> Regular Decision </th>
+          <td mat-cell *matCellDef="let element"> {{element.regular}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="early">
+          <th mat-header-cell *matHeaderCellDef> ED/EA/Other </th>
+          <td mat-cell *matCellDef="let element"> {{element.early}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="testing">
+          <th mat-header-cell *matHeaderCellDef> Testing </th>
+          <td mat-cell *matCellDef="let element"> {{element.testing}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="application">
+          <th mat-header-cell *matHeaderCellDef> Application Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.application}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score Report </th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>  
+    <button mat-flat-button color="accent" class="info-button">
+      More Info
+    </button>
+    <button mat-stroked-button color="accent">
+      Add School
+    </button>
+  </mat-card>
+  <mat-card>
+    <h1 class="mat-h2">Georgia Tech</h1>
+    <h1 class="mat-h4">Atlanta, GA</h1>
+    <div class="responsive-table">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="regular">
+          <th mat-header-cell *matHeaderCellDef> Regular Decision </th>
+          <td mat-cell *matCellDef="let element"> {{element.regular}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="early">
+          <th mat-header-cell *matHeaderCellDef> ED/EA/Other </th>
+          <td mat-cell *matCellDef="let element"> {{element.early}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="testing">
+          <th mat-header-cell *matHeaderCellDef> Testing </th>
+          <td mat-cell *matCellDef="let element"> {{element.testing}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="application">
+          <th mat-header-cell *matHeaderCellDef> Application Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.application}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score Report </th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>  
+    <button mat-flat-button color="accent" class="info-button">
+      More Info
+    </button>
+    <button mat-stroked-button color="accent">
+      Add School
+    </button>
+  </mat-card>
+  <mat-card>
+    <h1 class="mat-h2">Georgia Tech</h1>
+    <h1 class="mat-h4">Atlanta, GA</h1>
+    <div class="responsive-table">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="regular">
+          <th mat-header-cell *matHeaderCellDef> Regular Decision </th>
+          <td mat-cell *matCellDef="let element"> {{element.regular}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="early">
+          <th mat-header-cell *matHeaderCellDef> ED/EA/Other </th>
+          <td mat-cell *matCellDef="let element"> {{element.early}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="testing">
+          <th mat-header-cell *matHeaderCellDef> Testing </th>
+          <td mat-cell *matCellDef="let element"> {{element.testing}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="application">
+          <th mat-header-cell *matHeaderCellDef> Application Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.application}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score Report </th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>  
+    <button mat-flat-button color="accent" class="info-button">
+      More Info
+    </button>
+    <button mat-stroked-button color="accent">
+      Add School
+    </button>
+  </mat-card>
+  <mat-card>
+    <h1 class="mat-h2">Georgia Tech</h1>
+    <h1 class="mat-h4">Atlanta, GA</h1>
+    <div class="responsive-table">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="regular">
+          <th mat-header-cell *matHeaderCellDef> Regular Decision </th>
+          <td mat-cell *matCellDef="let element"> {{element.regular}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="early">
+          <th mat-header-cell *matHeaderCellDef> ED/EA/Other </th>
+          <td mat-cell *matCellDef="let element"> {{element.early}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="testing">
+          <th mat-header-cell *matHeaderCellDef> Testing </th>
+          <td mat-cell *matCellDef="let element"> {{element.testing}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="application">
+          <th mat-header-cell *matHeaderCellDef> Application Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.application}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score Report </th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>  
+    <button mat-flat-button color="accent" class="info-button">
+      More Info
+    </button>
+    <button mat-stroked-button color="accent">
+      Add School
+    </button>
+  </mat-card>
+  <mat-card>
+    <h1 class="mat-h2">Georgia Tech</h1>
+    <h1 class="mat-h4">Atlanta, GA</h1>
+    <div class="responsive-table">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="regular">
+          <th mat-header-cell *matHeaderCellDef> Regular Decision </th>
+          <td mat-cell *matCellDef="let element"> {{element.regular}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="early">
+          <th mat-header-cell *matHeaderCellDef> ED/EA/Other </th>
+          <td mat-cell *matCellDef="let element"> {{element.early}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="testing">
+          <th mat-header-cell *matHeaderCellDef> Testing </th>
+          <td mat-cell *matCellDef="let element"> {{element.testing}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="application">
+          <th mat-header-cell *matHeaderCellDef> Application Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.application}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score Report </th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>  
+    <button mat-flat-button color="accent" class="info-button">
+      More Info
+    </button>
+    <button mat-stroked-button color="accent">
+      Add School
+    </button>
+  </mat-card>
+  <mat-card>
+    <h1 class="mat-h2">Georgia Tech</h1>
+    <h1 class="mat-h4">Atlanta, GA</h1>
+    <div class="responsive-table">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="regular">
+          <th mat-header-cell *matHeaderCellDef> Regular Decision </th>
+          <td mat-cell *matCellDef="let element"> {{element.regular}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="early">
+          <th mat-header-cell *matHeaderCellDef> ED/EA/Other </th>
+          <td mat-cell *matCellDef="let element"> {{element.early}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="testing">
+          <th mat-header-cell *matHeaderCellDef> Testing </th>
+          <td mat-cell *matCellDef="let element"> {{element.testing}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="application">
+          <th mat-header-cell *matHeaderCellDef> Application Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.application}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score Report </th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>  
+    <button mat-flat-button color="accent" class="info-button">
+      More Info
+    </button>
+    <button mat-stroked-button color="accent">
+      Add School
+    </button>
+  </mat-card>
+  <mat-card>
+    <h1 class="mat-h2">Georgia Tech</h1>
+    <h1 class="mat-h4">Atlanta, GA</h1>
+    <div class="responsive-table">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="regular">
+          <th mat-header-cell *matHeaderCellDef> Regular Decision </th>
+          <td mat-cell *matCellDef="let element"> {{element.regular}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="early">
+          <th mat-header-cell *matHeaderCellDef> ED/EA/Other </th>
+          <td mat-cell *matCellDef="let element"> {{element.early}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="testing">
+          <th mat-header-cell *matHeaderCellDef> Testing </th>
+          <td mat-cell *matCellDef="let element"> {{element.testing}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="application">
+          <th mat-header-cell *matHeaderCellDef> Application Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.application}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score Report </th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>  
+    <button mat-flat-button color="accent" class="info-button">
+      More Info
+    </button>
+    <button mat-stroked-button color="accent">
+      Add School
+    </button>
+  </mat-card>
+  <mat-card>
+    <h1 class="mat-h2">Georgia Tech</h1>
+    <h1 class="mat-h4">Atlanta, GA</h1>
+    <div class="responsive-table">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="regular">
+          <th mat-header-cell *matHeaderCellDef> Regular Decision </th>
+          <td mat-cell *matCellDef="let element"> {{element.regular}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="early">
+          <th mat-header-cell *matHeaderCellDef> ED/EA/Other </th>
+          <td mat-cell *matCellDef="let element"> {{element.early}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="testing">
+          <th mat-header-cell *matHeaderCellDef> Testing </th>
+          <td mat-cell *matCellDef="let element"> {{element.testing}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="application">
+          <th mat-header-cell *matHeaderCellDef> Application Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.application}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score Report </th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>  
+    <button mat-flat-button color="accent" class="info-button">
+      More Info
+    </button>
+    <button mat-stroked-button color="accent">
+      Add School
+    </button>
+  </mat-card>
+  <mat-card>
+    <h1 class="mat-h2">Georgia Tech</h1>
+    <h1 class="mat-h4">Atlanta, GA</h1>
+    <div class="responsive-table">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="regular">
+          <th mat-header-cell *matHeaderCellDef> Regular Decision </th>
+          <td mat-cell *matCellDef="let element"> {{element.regular}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="early">
+          <th mat-header-cell *matHeaderCellDef> ED/EA/Other </th>
+          <td mat-cell *matCellDef="let element"> {{element.early}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="testing">
+          <th mat-header-cell *matHeaderCellDef> Testing </th>
+          <td mat-cell *matCellDef="let element"> {{element.testing}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="application">
+          <th mat-header-cell *matHeaderCellDef> Application Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.application}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score Report </th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>  
+    <button mat-flat-button color="accent" class="info-button">
+      More Info
+    </button>
+    <button mat-stroked-button color="accent">
+      Add School
+    </button>
+  </mat-card>
+  <mat-card>
+    <h1 class="mat-h2">Georgia Tech</h1>
+    <h1 class="mat-h4">Atlanta, GA</h1>
+    <div class="responsive-table">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="regular">
+          <th mat-header-cell *matHeaderCellDef> Regular Decision </th>
+          <td mat-cell *matCellDef="let element"> {{element.regular}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="early">
+          <th mat-header-cell *matHeaderCellDef> ED/EA/Other </th>
+          <td mat-cell *matCellDef="let element"> {{element.early}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="testing">
+          <th mat-header-cell *matHeaderCellDef> Testing </th>
+          <td mat-cell *matCellDef="let element"> {{element.testing}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="application">
+          <th mat-header-cell *matHeaderCellDef> Application Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.application}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score Report </th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>  
+    <button mat-flat-button color="accent" class="info-button">
+      More Info
+    </button>
+    <button mat-stroked-button color="accent">
+      Add School
+    </button>
+  </mat-card>
+  <mat-card>
+    <h1 class="mat-h2">Georgia Tech</h1>
+    <h1 class="mat-h4">Atlanta, GA</h1>
+    <div class="responsive-table">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="regular">
+          <th mat-header-cell *matHeaderCellDef> Regular Decision </th>
+          <td mat-cell *matCellDef="let element"> {{element.regular}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="early">
+          <th mat-header-cell *matHeaderCellDef> ED/EA/Other </th>
+          <td mat-cell *matCellDef="let element"> {{element.early}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="testing">
+          <th mat-header-cell *matHeaderCellDef> Testing </th>
+          <td mat-cell *matCellDef="let element"> {{element.testing}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="application">
+          <th mat-header-cell *matHeaderCellDef> Application Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.application}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score Report </th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>  
+    <button mat-flat-button color="accent" class="info-button">
+      More Info
+    </button>
+    <button mat-stroked-button color="accent">
+      Add School
+    </button>
+  </mat-card>
+  <mat-card>
+    <h1 class="mat-h2">Georgia Tech</h1>
+    <h1 class="mat-h4">Atlanta, GA</h1>
+    <div class="responsive-table">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="regular">
+          <th mat-header-cell *matHeaderCellDef> Regular Decision </th>
+          <td mat-cell *matCellDef="let element"> {{element.regular}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="early">
+          <th mat-header-cell *matHeaderCellDef> ED/EA/Other </th>
+          <td mat-cell *matCellDef="let element"> {{element.early}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="testing">
+          <th mat-header-cell *matHeaderCellDef> Testing </th>
+          <td mat-cell *matCellDef="let element"> {{element.testing}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="application">
+          <th mat-header-cell *matHeaderCellDef> Application Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.application}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score Report </th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>  
+    <button mat-flat-button color="accent" class="info-button">
+      More Info
+    </button>
+    <button mat-stroked-button color="accent">
+      Add School
+    </button>
+  </mat-card>
+  
+  
+</div>
+
+
+<!-- <button mat-flat-button color="primary">
+  Sign In
+</button> -->
+
+<router-outlet></router-outlet>
