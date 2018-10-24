@@ -13,12 +13,23 @@ import { SchoolComponent } from './school/school.component';
 import { MaterialModule } from './material/material.module';
 import { CardComponent } from './card/card.component';
 
+import { CoreModule } from './core/core.module';
+import { AuthService } from './core/auth.service';
+import { ListComponent } from './list/list.component';
+import { AccountComponent } from './account/account.component';
+import { AboutComponent } from './about/about.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SchoolComponent,
     CardComponent,
+    ListComponent,
+    AccountComponent,
+    AboutComponent,
+    CreateAccountComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,8 +38,9 @@ import { CardComponent } from './card/card.component';
     AngularFireAuthModule,
     AngularFirestoreModule,
     MaterialModule,
+    CoreModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

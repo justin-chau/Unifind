@@ -3,13 +3,14 @@
     <mat-icon>menu</mat-icon>
   </button>
   <h2 class="mat-display-1" id="title">Unifind</h2>
-  <button mat-button class="large-nav">Home</button>
   <button mat-button class="large-nav" routerLink="/schools">Schools</button>
-  <button mat-button class="large-nav">Your List</button>
-  <button mat-button class="large-nav">About</button>
+  <button mat-button class="large-nav" routerLink="/list">Your List</button>
+  <button mat-button class="large-nav" routerLink="/about">About</button>
   <span class="spacer"></span>
-  <button mat-flat-button color="accent">
+  
+  <button mat-flat-button color="accent" routerLink="/account">
     <mat-icon class="account-circle">account_circle</mat-icon>
-    Account
+    <a *ngIf="auth.user | async; else login">Dashboard</a>
+    <ng-template #login>Login</ng-template>
   </button>
 </mat-toolbar>
