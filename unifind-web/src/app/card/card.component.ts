@@ -33,4 +33,8 @@ export class CardComponent implements OnInit {
       return true;
     }
   }
+
+  removeSchool(school) {
+    this.data.removeUserSchools(school.id);
+  }
 }
