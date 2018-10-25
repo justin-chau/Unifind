@@ -1,3 +1,14 @@
-<p>
-  list works!
-</p>
+<div class="card-container">
+  <div>
+      <mat-card>
+        <h1 class="mat-title">Your Unifind List</h1>
+        <div *ngIf="!data.userHasSchools()">
+            <h1 class="mat-subheading-2">Your list is empty at the moment. You can add schools here to keep track of deadlines.</h1>
+        </div>
+        <button mat-flat-button color="primary" routerLink="/schools">School Search</button>
+      </mat-card>
+    </div>
+  <div *ngFor="let school of data.schools | async">
+    <app-card *ngIf="!data.checkSchools(school.id)" [school]="school"></app-card>
+  </div>
+</div>

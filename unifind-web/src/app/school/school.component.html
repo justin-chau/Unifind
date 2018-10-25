@@ -9,9 +9,6 @@
   </mat-card>
 </div>
 
-<div *ngFor="let school of schools | async">
-  {{ school.uid }}
+<div *ngFor="let school of data.schools | async">
   <app-card [school]="school"></app-card>
 </div>
-
-

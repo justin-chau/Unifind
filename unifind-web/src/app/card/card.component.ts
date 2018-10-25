@@ -16,25 +16,11 @@ export class CardComponent implements OnInit {
   ngOnInit() {
   }
 
-  addSchool(school){
-    this.data.updateUserSchools(school.id);
-  }
+  // addSchool(school){
+  //   this.data.updateUserSchools(school.id);
+  // }
 
-  checkSchools(school) {
-    try {
-      if (this.data.user.schools.includes(school)) {
-        return false;
-      }
-      else {
-        return true;
-      }
-    }
-    catch {
-      return true;
-    }
-  }
-
-  removeSchool(school) {
-    this.data.removeUserSchools(school.id);
-  }
+  // removeSchool(school) {
+  //   this.data.removeUserSchools(school.id);
+  // }
 }

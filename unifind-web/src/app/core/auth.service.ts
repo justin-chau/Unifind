@@ -24,12 +24,12 @@ export class AuthService {
     this.user = this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
-          return this.afStore.doc<User>(`users/${user.uid}`).valueChanges()
+          return this.afStore.doc<User>(`users/${user.uid}`).valueChanges();
         } else {
-          return of(null)
+          return of(null);
         }
       })
-    )
+    );
   }
 
   googleLogin() {
@@ -40,14 +40,8 @@ export class AuthService {
   private oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
-        this.updateUserData(credential.user)
+        this.updateUserData(credential.user);
       })
-  }
-
-  signOut() {
-    this.afAuth.auth.signOut().then(() => {
-        this.router.navigate(['/schools']);
-    });
   }
 
   private updateUserData(user) {
@@ -58,8 +52,15 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL
-    }
+    };
+    
     return userRef.set(data, { merge: true });
+  }
+
+  signOut() {
+    this.afAuth.auth.signOut().then(() => {
+        this.router.navigate(['/schools']);
+    });
   }
 }
 

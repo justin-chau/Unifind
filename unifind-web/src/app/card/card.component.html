@@ -2,14 +2,14 @@
   <h1 class="mat-title">{{school.name}}</h1>
   <h1 class="mat-subheading-2">{{school.location}}</h1>
   <h1 class="mat-subheading-2">Unifind ID: {{school.id}}</h1>
-  <div *ngIf="checkSchools(school.id); else added">
-    <button  mat-flat-button color="primary" (click)="addSchool(school)">
+  <div *ngIf="data.checkSchools(school.id); else added">
+    <button  mat-flat-button color="primary" (click)="data.updateUserSchools(school.id)">
         Add School
     </button>
   </div>
 
   <ng-template #added>
-    <button  mat-flat-button color="primary" (click)="removeSchool(school)">
+    <button  mat-flat-button color="primary" (click)="data.removeUserSchools(school.id)">
       <mat-icon>
         check_circle
       </mat-icon>

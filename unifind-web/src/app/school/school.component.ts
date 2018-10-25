@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { DataService } from '../core/data.service';
 
 @Component({
@@ -9,12 +8,9 @@ import { DataService } from '../core/data.service';
 })
 export class SchoolComponent implements OnInit {
 
-  schools: Observable<any[]>;
   constructor(public data: DataService) {
-    this.schools = data.schools;
   }
   ngOnInit() {
-    this.schools = this.data.schools;
   }
 
 }

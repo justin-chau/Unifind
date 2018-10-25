@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection} from '@angular/fire/firestore';
 
 import { Observable } from 'rxjs';
@@ -20,23 +19,16 @@ export class DataService {
   user: User;
   schools: Observable<SchoolId[]>;
   userRef: AngularFirestoreDocument<User>;
-  private schoolCollection: AngularFirestoreCollection<School>;
+  schoolCollection: AngularFirestoreCollection<School>;
   
-  constructor(private afStore: AngularFirestore, private router: Router, private auth: AuthService) {
+  constructor(private afStore: AngularFirestore, private router: Router, public auth: AuthService) {
     this.auth.user.subscribe(data => {
       if(data){
         this.user = data;
         this.userRef = this.afStore.doc(`users/${this.user.uid}`);
       }
       else {
-        this.user = {
-          uid: null,
-          email: null,
-          schools: null,
-          photoURL: null,
-          displayName: null,
-          faculty: null
-        }
+        this.user = null;
       }
     }) 
     this.schoolCollection = afStore.collection<School>('schools');
@@ -52,7 +44,7 @@ export class DataService {
   updateUserSchools(schoolId) {
     if (this.user){
       if (this.user.schools) {
-        this.user.schools.push(schoolId)
+        this.user.schools.push(schoolId);
       }
       else {
         this.user.schools = [schoolId];
@@ -66,7 +58,35 @@ export class DataService {
 
   removeUserSchools(schoolId) {
     var index = this.user.schools.indexOf(schoolId);
-    this.user.schools.splice(index);
+    this.user.schools.splice(index, 1);
     return this.userRef.update(this.user);
+  }
+
+  checkSchools(school) {
+    try {
+      if (this.user.schools.includes(school)) {
+        return false;
+      }
+      else {
+        return true;
+      }
+    }
+    catch {
+      return true;
+    }
+  }
+
+  userHasSchools() {
+    try {
+      if (this.user.schools.length > 0) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+    catch {
+      return false;
+    }
   }
 }

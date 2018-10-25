@@ -48,6 +48,7 @@
       <h1 class="mat-title">Unifind Dashboard</h1>
       <h1 class="mat-headline user-name">Hello, {{ user.displayName }}</h1>
       <h1 class="mat-body-1">Unifind ID: {{ user.uid }}</h1>
+      <h1 class="mat-body-1">School IDs: {{ user.schools }}</h1>
       <mat-divider [inset]="true"></mat-divider>
       
       <button mat-flat-button color="primary" (click)="auth.signOut()">
