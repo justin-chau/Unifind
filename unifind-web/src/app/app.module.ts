@@ -15,6 +15,7 @@ import { CardComponent } from './card/card.component';
 
 import { CoreModule } from './core/core.module';
 import { AuthService } from './core/auth.service';
+import { DataService } from './core/data.service';
 import { ListComponent } from './list/list.component';
 import { AccountComponent } from './account/account.component';
 import { AboutComponent } from './about/about.component';
@@ -40,7 +41,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     MaterialModule,
     CoreModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

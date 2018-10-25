@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { DataService } from '../core/data.service';
 
 @Component({
   selector: 'app-school',
@@ -10,10 +10,11 @@ import { Observable } from 'rxjs';
 export class SchoolComponent implements OnInit {
 
   schools: Observable<any[]>;
-  constructor(db: AngularFirestore) {
-    this.schools = db.collection('schools').valueChanges();
+  constructor(public data: DataService) {
+    this.schools = data.schools;
   }
   ngOnInit() {
+    this.schools = this.data.schools;
   }
 
 }

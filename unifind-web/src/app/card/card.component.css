@@ -15,3 +15,13 @@ mat-card {
 .mat-subheading-2 {
     margin-top: 0px;
 }
+
+div {
+    display: inline-block;
+}
+
+mat-icons {
+    padding:0;
+    margin: 0;
+    padding-bottom: 3px;
+}

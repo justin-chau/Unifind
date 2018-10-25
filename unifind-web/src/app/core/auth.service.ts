@@ -11,6 +11,7 @@ import { switchMap } from 'rxjs/operators';
 interface User {
   uid: string;
   email: string;
+  schools?: string[];
   photoURL?: string;
   displayName?: string;
   faculty?: boolean;
@@ -22,6 +23,7 @@ interface User {
 export class AuthService {
 
   user: Observable<User>;
+  schools: string[];
 
   constructor(private afAuth: AngularFireAuth,
               private afStore: AngularFirestore,
@@ -30,7 +32,7 @@ export class AuthService {
     this.user = this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
-          return this.afStore.doc<User>('users/${user.uid}').valueChanges()
+          return this.afStore.doc<User>(`users/${user.uid}`).valueChanges()
         } else {
           return of(null)
         }
@@ -51,14 +53,15 @@ export class AuthService {
   }
 
   private updateUserData(user) {
-    const userRef: AngularFirestoreDocument<any> = this.afStore.doc('users/${user.uid}');
-    const data: User = {
+    const userRef: AngularFirestoreDocument<User> = this.afStore.doc(`users/${user.uid}`);
+
+    var data: User = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL
     }
-    return userRef.set(data, { merge: true })
+    return userRef.set(data, { merge: true });
   }
 
   signOut() {
