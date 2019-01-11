@@ -11,7 +11,7 @@ import { environment } from '../environments/environment';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SchoolComponent } from './school/school.component';
 import { MaterialModule } from './material/material.module';
-import { CardComponent } from './card/card.component';
+import { CardComponent, InfoDialog, WriterDialog } from './card/card.component';
 
 import { CoreModule } from './core/core.module';
 import { AuthService } from './core/auth.service';
@@ -21,6 +21,7 @@ import { AccountComponent } from './account/account.component';
 import { AboutComponent } from './about/about.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { SnackMessageComponent } from './snack-message/snack-message.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,9 @@ import { SnackMessageComponent } from './snack-message/snack-message.component';
     AboutComponent,
     CreateAccountComponent,
     SnackMessageComponent,
+    InfoDialog,
+    WriterDialog,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,9 @@ import { SnackMessageComponent } from './snack-message/snack-message.component';
     CoreModule
   ],
   entryComponents: [
-    SnackMessageComponent
+    SnackMessageComponent,
+    InfoDialog,
+    WriterDialog
   ],
   providers: [AuthService, DataService],
   bootstrap: [AppComponent]

@@ -28,6 +28,10 @@ const routes: Routes = [
   {
     path: 'create-account',
     component: CreateAccountComponent
+  },
+  {
+    path: '',
+    component: AboutComponent
   }
 ];
 

@@ -40,7 +40,7 @@ export class DataService {
       }))
     );
   }
-  
+
   updateUserSchools(schoolId) {
     if (this.user){
       if (this.user.schools) {
