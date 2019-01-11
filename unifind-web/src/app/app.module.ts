@@ -20,6 +20,7 @@ import { ListComponent } from './list/list.component';
 import { AccountComponent } from './account/account.component';
 import { AboutComponent } from './about/about.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { SnackMessageComponent } from './snack-message/snack-message.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     AccountComponent,
     AboutComponent,
     CreateAccountComponent,
+    SnackMessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,9 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     AngularFirestoreModule,
     MaterialModule,
     CoreModule
+  ],
+  entryComponents: [
+    SnackMessageComponent
   ],
   providers: [AuthService, DataService],
   bootstrap: [AppComponent]

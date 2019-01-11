@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatInputModule, MatFormFieldModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule , MatCardModule, MatInput, MatDividerModule} from '@angular/material';
+import { MatSnackBarModule, MatInputModule, MatFormFieldModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule , MatCardModule, MatInput, MatDividerModule} from '@angular/material';
 
 @NgModule({
   imports: [
@@ -21,7 +21,8 @@ import { MatInputModule, MatFormFieldModule, MatToolbarModule, MatButtonModule, 
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSnackBarModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -37,7 +38,8 @@ import { MatInputModule, MatFormFieldModule, MatToolbarModule, MatButtonModule, 
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSnackBarModule
   ],
   declarations: []
 })
