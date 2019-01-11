@@ -1,8 +1,6 @@
 import { Component, OnInit , Input, Inject} from '@angular/core';
-import { AuthService } from '../core/auth.service';
 import { DataService } from '../core/data.service';
 import { MatSnackBar, MatSnackBarConfig, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { AboutComponent } from '../about/about.component';
 import { Router } from '@angular/router';
 
 export interface InfoDialogData {

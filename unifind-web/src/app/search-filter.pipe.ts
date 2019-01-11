@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class SearchFilterPipe implements PipeTransform {
  transform(items: any, field: string, value: string) {
-    return items.pipe(filter(school => school.field === value));
+    return items.pipe(filter(school => school === value));
   }
 }
 
