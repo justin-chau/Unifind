@@ -4,11 +4,11 @@
           <mat-label>
             Search
           </mat-label>
-          <input color="primary" matInput placeholder="School Name">
+          <input color="primary" matInput placeholder="School Name" ng-model="searchText">
       </mat-form-field> 
   </mat-card>
 </div>
 
-<div *ngFor="let school of data.schools | async">
+<div *ngFor="let school of data.schools | searchFilter: 'name' : searchText | async">
   <app-card [school]="school"></app-card>
 </div>

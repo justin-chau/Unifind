@@ -2,17 +2,17 @@ import { Component, OnInit , Input, Inject} from '@angular/core';
 import { AuthService } from '../core/auth.service';
 import { DataService } from '../core/data.service';
 import { MatSnackBar, MatSnackBarConfig, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { SnackMessageComponent } from '../snack-message/snack-message.component';
 import { AboutComponent } from '../about/about.component';
+import { Router } from '@angular/router';
 
-export interface DialogData {
-  animal : string;
-  name : string;
+export interface InfoDialogData {
+  animal: string;
+  name: string;
 }
 
-export interface WriterData {
-  animal : string;
-  name : string;
+export interface WriterDialogData {
+  animal: string;
+  name: string;
 }
 
 @Component({
@@ -24,10 +24,7 @@ export interface WriterData {
 export class CardComponent implements OnInit {
   @Input() school;
 
-  animal: string;
-  name: string;
-
-  constructor(public data: DataService, public snackBar: MatSnackBar, public infoDialog: MatDialog, public writerDialog: MatDialog) { }
+  constructor(public data: DataService, public snackBar: MatSnackBar, public infoDialog: MatDialog, public writerDialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
   }
@@ -41,36 +38,37 @@ export class CardComponent implements OnInit {
   openInfo(){
     const dialogRef = this.infoDialog.open(InfoDialog, {
       width: '850px',
-      data: {name: this.name, animal: this.animal}
+      data: {school: this.school}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.animal = result;
+      // this.animal = result;
+      // Use above for admin override
     });
   }
 
   openWriter(){
-    const dialogWriterRef = this.writerDialog.open(WriterDialog, {
-      width: '850px',
-      data: {name: this.name, animal: this.animal}
-    });
+    if (this.data.user) {
+      const dialogWriterRef = this.writerDialog.open(WriterDialog, {
+        width: '850px',
+        data: {school: this.school}
+      });
 
-    dialogWriterRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
-    });
-  }
-
-  message(){
-    const config = new MatSnackBarConfig();
-    config.panelClass=['snack-message']
-    this.snackBar.openFromComponent(SnackMessageComponent,config);
+      dialogWriterRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        // this.animal = result;
+        // Use above for admin override
+      });
+    }
+    else {
+      this.router.navigate(['/account'])
+    }
   }
 
   removeSchool() {
     this.data.removeUserSchools(this.school.id);
-    this.snackBar.open(`${this.school.name} was removed from you list.`, "Dismiss");
+    this.snackBar.open(`${this.school.name} was removed from your list.`, "Dismiss");
   }
 }
 
@@ -82,8 +80,8 @@ export class CardComponent implements OnInit {
 export class InfoDialog {
 
   constructor(
-    public dialogRef: MatDialogRef<InfoDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    public dialogRef: MatDialogRef<InfoDialog>, public snackBar: MatSnackBar,
+    @Inject(MAT_DIALOG_DATA) public data: InfoDialogData) {}
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -93,17 +91,21 @@ export class InfoDialog {
 
 @Component({
   selector: 'app-writer',
-  templateUrl: 'info.component.html',
-  styleUrls: ['info.component.css']
+  templateUrl: 'writer.component.html',
+  styleUrls: ['writer.component.css']
 })
 export class WriterDialog {
 
   constructor(
-    public dialogWriterRef: MatDialogRef<WriterDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: WriterData) {}
+    public dialogWriterRef: MatDialogRef<WriterDialog>, public snackBar: MatSnackBar,
+    @Inject(MAT_DIALOG_DATA) public data: WriterDialogData) {}
 
   onNoClick(): void {
     this.dialogWriterRef.close();
+  }
+
+  send(): void {
+    this.snackBar.open('Message sent!', 'Dismiss');
   }
 
 }

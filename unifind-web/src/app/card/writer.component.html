@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Write to {{data.school.name}}</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <textarea matInput rows="8" placeholder="Type your message here..."></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="send()" [mat-dialog-close]="data.school.name" mat-flat-button color="primary">Send</button>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+</div>

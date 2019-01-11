@@ -1,11 +1,23 @@
-<h1 mat-dialog-title>Hi {{data.name}}</h1>
 <div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.animal">
-  </mat-form-field>
+    <h1 class="mat-display-1">{{data.school.name}}</h1>
+    <h1 class="mat-subheading-2">{{data.school.location}}</h1>
+    <mat-divider [inset]="false"></mat-divider>
+    <h1 class="mat-title">Unifind ID</h1>
+    <h1 class="mat-subheading-2">{{data.school.id}}</h1>
+    <mat-divider [inset]="false"></mat-divider>
+    <h1 class="mat-title">Early Action Deadline</h1>
+    <h1 class="mat-subheading-2">{{data.school.ea.toMillis() | date: 'yyyy/MM/dd h:mm:ss a'}}</h1>
+    <mat-divider [inset]="false"></mat-divider>
+    <h1 class="mat-title">Regular Decision Deadline</h1>
+    <h1 class="mat-subheading-2">{{data.school.rd.toMillis() | date: 'yyyy/MM/dd h:mm:ss a'}}</h1>
+    <mat-divider [inset]="false"></mat-divider>
+    <h1 class="mat-title">Testing Options</h1>
+    <h1 class="mat-subheading-2">{{data.school.testing}}</h1>
+    <mat-divider [inset]="false"></mat-divider>
+    <h1 class="mat-title">Submit Scores By:</h1>
+    <h1 class="mat-subheading-2">{{data.school.sd.toMillis() | date: 'yyyy/MM/dd h:mm:ss a'}}</h1>
+    <mat-divider [inset]="false"></mat-divider>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onNoClick()">Close</button>
 </div>

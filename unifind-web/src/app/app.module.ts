@@ -20,8 +20,8 @@ import { ListComponent } from './list/list.component';
 import { AccountComponent } from './account/account.component';
 import { AboutComponent } from './about/about.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
-import { SnackMessageComponent } from './snack-message/snack-message.component';
 import { MessagesComponent } from './messages/messages.component';
+import { SearchFilterPipe } from './search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -33,10 +33,10 @@ import { MessagesComponent } from './messages/messages.component';
     AccountComponent,
     AboutComponent,
     CreateAccountComponent,
-    SnackMessageComponent,
     InfoDialog,
     WriterDialog,
     MessagesComponent,
+    SearchFilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +48,7 @@ import { MessagesComponent } from './messages/messages.component';
     CoreModule
   ],
   entryComponents: [
-    SnackMessageComponent,
+
     InfoDialog,
     WriterDialog
   ],
