@@ -5,7 +5,7 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyDFskUJWWWWCYyQAJ3O3LOHYBAgQRw8s0A",
+    apiKey: "",
     authDomain: "unifind-online.firebaseapp.com",
     databaseURL: "https://unifind-online.firebaseio.com",
     projectId: "unifind-online",
